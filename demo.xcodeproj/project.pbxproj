@@ -13,6 +13,9 @@
 		7A5339F31D98C98600CAA598 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5339F21D98C98600CAA598 /* MessagesViewController.swift */; };
 		7A5339F61D98C98600CAA598 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A5339F41D98C98600CAA598 /* MainInterface.storyboard */; };
 		7A5339F81D98C98600CAA598 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A5339F71D98C98600CAA598 /* Assets.xcassets */; };
+		7A533A041D98CAFB00CAA598 /* SenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A533A031D98CAFB00CAA598 /* SenderViewController.swift */; };
+		7A533A061D98CB0800CAA598 /* ReceiverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A533A051D98CB0800CAA598 /* ReceiverViewController.swift */; };
+		7A533A081D98DA7500CAA598 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A533A071D98DA7500CAA598 /* StartViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		7A5339F51D98C98600CAA598 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		7A5339F71D98C98600CAA598 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A5339F91D98C98600CAA598 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A533A031D98CAFB00CAA598 /* SenderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SenderViewController.swift; sourceTree = "<group>"; };
+		7A533A051D98CB0800CAA598 /* ReceiverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiverViewController.swift; sourceTree = "<group>"; };
+		7A533A071D98DA7500CAA598 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +112,9 @@
 				7A5339F41D98C98600CAA598 /* MainInterface.storyboard */,
 				7A5339F71D98C98600CAA598 /* Assets.xcassets */,
 				7A5339F91D98C98600CAA598 /* Info.plist */,
+				7A533A031D98CAFB00CAA598 /* SenderViewController.swift */,
+				7A533A051D98CB0800CAA598 /* ReceiverViewController.swift */,
+				7A533A071D98DA7500CAA598 /* StartViewController.swift */,
 			);
 			path = MessagesExtension;
 			sourceTree = "<group>";
@@ -212,6 +221,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A5339F31D98C98600CAA598 /* MessagesViewController.swift in Sources */,
+				7A533A081D98DA7500CAA598 /* StartViewController.swift in Sources */,
+				7A533A061D98CB0800CAA598 /* ReceiverViewController.swift in Sources */,
+				7A533A041D98CAFB00CAA598 /* SenderViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,7 +372,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = demo/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = com.meetup.demo.demo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.meetup.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -373,7 +385,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = demo/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = com.meetup.demo.demo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.meetup.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

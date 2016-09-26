@@ -1,14 +1,16 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ObA-dk-sSI">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ObA-dk-sSI">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Messages View Controller-->
         <scene sceneID="7MM-of-jgj">
             <objects>
-                <viewController id="ObA-dk-sSI" customClass="MessagesViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ObA-dk-sSI" customClass="MessagesViewController" customModule="MessagesExtension" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qkL-Od-lgU"/>
                         <viewControllerLayoutGuide type="bottom" id="n38-gi-rB5"/>
@@ -16,24 +18,136 @@
                     <view key="view" contentMode="scaleToFill" id="zMn-AG-sqS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello World" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1e-fi-ked">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="centerY" secondItem="d1e-fi-ked" secondAttribute="centerY" id="H0s-hz-dDP"/>
-                            <constraint firstAttribute="centerX" secondItem="d1e-fi-ked" secondAttribute="centerX" id="wFy-hW-Bib"/>
-                        </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="528"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-190" y="-16"/>
+        </scene>
+        <!--Start View Controller-->
+        <scene sceneID="kUy-Ux-qrE">
+            <objects>
+                <viewController storyboardIdentifier="StartViewController" id="s7x-Vh-6SW" customClass="StartViewController" customModule="MessagesExtension" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cF3-Bo-Ser"/>
+                        <viewControllerLayoutGuide type="bottom" id="GPm-bE-6cl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mCT-m8-SKx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h17-9G-noo">
+                                <state key="normal" title="Enviar mensaje"/>
+                                <connections>
+                                    <action selector="sendMessage:" destination="ObA-dk-sSI" eventType="touchUpInside" id="YiJ-4D-Hts"/>
+                                    <action selector="startMessageSender:" destination="s7x-Vh-6SW" eventType="touchUpInside" id="WQo-SM-ycz"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="h17-9G-noo" firstAttribute="centerY" secondItem="mCT-m8-SKx" secondAttribute="centerY" id="Jqg-B7-sEp"/>
+                            <constraint firstItem="h17-9G-noo" firstAttribute="centerX" secondItem="mCT-m8-SKx" secondAttribute="centerX" id="MZF-eI-yDb"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uN6-sy-nJ4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="530" y="54"/>
+        </scene>
+        <!--Sender View Controller-->
+        <scene sceneID="Yig-6o-4no">
+            <objects>
+                <viewController storyboardIdentifier="SenderViewController" id="BwT-oB-egC" customClass="SenderViewController" customModule="MessagesExtension" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jRP-qf-XhB"/>
+                        <viewControllerLayoutGuide type="bottom" id="Nfq-xm-7ex"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Okf-Y1-uca">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VmD-nw-F0z">
+                                <state key="normal" title="Enviar mensaje 1"/>
+                                <connections>
+                                    <action selector="didTapMessage1:" destination="BwT-oB-egC" eventType="touchUpInside" id="Vhv-ki-j21"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seleccione el mensaje a enviar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JbL-Df-sQd">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gel-xS-qEX">
+                                <state key="normal" title="Enviar mensaje 2"/>
+                                <connections>
+                                    <action selector="didTapMessage2:" destination="BwT-oB-egC" eventType="touchUpInside" id="pjH-AC-loX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JbL-Df-sQd" firstAttribute="centerX" secondItem="Okf-Y1-uca" secondAttribute="centerX" id="7Rl-JA-IPw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="VmD-nw-F0z" secondAttribute="trailing" constant="10" id="CPx-Te-uuS"/>
+                            <constraint firstItem="VmD-nw-F0z" firstAttribute="leading" secondItem="Okf-Y1-uca" secondAttribute="leadingMargin" constant="10" id="D0a-Zv-Kub"/>
+                            <constraint firstItem="Gel-xS-qEX" firstAttribute="top" secondItem="VmD-nw-F0z" secondAttribute="bottom" constant="51" id="GbI-j8-7YS"/>
+                            <constraint firstItem="Gel-xS-qEX" firstAttribute="leading" secondItem="Okf-Y1-uca" secondAttribute="leadingMargin" constant="10" id="JWI-mm-DmK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Gel-xS-qEX" secondAttribute="trailing" constant="10" id="M1J-UH-yc9"/>
+                            <constraint firstItem="Gel-xS-qEX" firstAttribute="centerX" secondItem="Okf-Y1-uca" secondAttribute="centerX" id="Tds-ma-QNs"/>
+                            <constraint firstItem="VmD-nw-F0z" firstAttribute="centerX" secondItem="Okf-Y1-uca" secondAttribute="centerX" id="cYF-6F-Sl1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JbL-Df-sQd" secondAttribute="trailing" constant="10" id="huG-Fs-bYk"/>
+                            <constraint firstItem="JbL-Df-sQd" firstAttribute="top" secondItem="jRP-qf-XhB" secondAttribute="bottom" constant="68" id="njU-hk-cuA"/>
+                            <constraint firstItem="VmD-nw-F0z" firstAttribute="top" secondItem="JbL-Df-sQd" secondAttribute="bottom" constant="51" id="sRu-DU-NfY"/>
+                            <constraint firstItem="JbL-Df-sQd" firstAttribute="leading" secondItem="Okf-Y1-uca" secondAttribute="leadingMargin" constant="10" id="uZy-xv-RTx"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FgR-fe-apf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1190" y="53"/>
+        </scene>
+        <!--Receiver View Controller-->
+        <scene sceneID="gOA-2i-7Vv">
+            <objects>
+                <viewController storyboardIdentifier="ReceiverViewController" id="T3M-Bo-ypv" customClass="ReceiverViewController" customModule="MessagesExtension" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EdG-ZT-auN"/>
+                        <viewControllerLayoutGuide type="bottom" id="pZK-U0-I7V"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6EJ-ao-iQc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="El Mensaje recibido fue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K9o-ci-MgA">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KBJ-cR-x27">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.33359560438172908" green="0.39456363549005624" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="K9o-ci-MgA" firstAttribute="leading" secondItem="6EJ-ao-iQc" secondAttribute="leadingMargin" constant="10" id="Dye-9j-M9Q"/>
+                            <constraint firstItem="KBJ-cR-x27" firstAttribute="centerX" secondItem="6EJ-ao-iQc" secondAttribute="centerX" id="FP9-kZ-qKv"/>
+                            <constraint firstItem="KBJ-cR-x27" firstAttribute="top" secondItem="K9o-ci-MgA" secondAttribute="bottom" constant="20" id="Rry-AQ-RPa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="K9o-ci-MgA" secondAttribute="trailing" constant="10" id="eP7-Rl-MPl"/>
+                            <constraint firstItem="KBJ-cR-x27" firstAttribute="centerY" secondItem="6EJ-ao-iQc" secondAttribute="centerY" id="iAj-sf-esk"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="resultLabel" destination="KBJ-cR-x27" id="SBD-PB-sX7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fga-kB-Mc1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1860" y="53"/>
         </scene>
     </scenes>
 </document>
